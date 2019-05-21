@@ -6,7 +6,9 @@ ruby '2.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+# A modern, simple and very fast Mysql library for Ruby - binding to libmysql 
+gem 'mysql2', '~> 0.5.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -43,6 +45,8 @@ gem 'haml'
 gem "haml-rails", "~> 2.0"
 # Decorators/View-Models for Rails Applications
 gem 'draper'
+# Minimal authorization through OO design and pure Ruby classes
+gem "pundit"
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 4.x'
 
