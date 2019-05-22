@@ -33,7 +33,7 @@ module Movies
           snippet = source["snippet"]
           @movie.name = snippet["title"]
           @movie.description = snippet["description"]
-          @movie.sources = source
+          @movie.sources = snippet.merge(source["statistics"])
         end
       end
 

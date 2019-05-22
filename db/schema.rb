@@ -14,19 +14,10 @@ ActiveRecord::Schema.define(version: 2019_05_22_073118) do
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.string "url"
     t.text "sources"
-    t.integer "play_list_id"
-    t.integer "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "play_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "owner_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,17 +46,6 @@ ActiveRecord::Schema.define(version: 2019_05_22_073118) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
-  end
-
-  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "url"
-    t.string "thumbnail"
-    t.integer "play_list_id"
-    t.integer "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

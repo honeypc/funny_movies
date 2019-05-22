@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @moviese = Movie.all
+    @movies = Movie.includes(:user).paginate(page: params[:page])
   end
 end

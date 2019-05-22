@@ -51,6 +51,9 @@ gem "pundit"
 gem 'webpacker', '~> 4.x'
 # HTTP/REST API client library
 gem 'faraday', '~> 0.9.2'
+# Pagination library for Rails, Sinatra, Merb, DataMapper, and more 
+gem 'will_paginate', '>= 3.1'
+gem 'will_paginate-bootstrap4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

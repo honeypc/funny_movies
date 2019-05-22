@@ -1,18 +1,12 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
   .container
-    %a.navbar-brand{:href => "#"} Funny Movies
+    %a.navbar-brand{:href => "/"}
+      %b Funny
+      Movies
     %button.navbar-toggler{"aria-controls" => "navbarTogglerDemo02", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarTogglerDemo02", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarTogglerDemo02.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-        %li.nav-item.active
-          %a.nav-link{:href => "#"}
-            Home
-            %span.sr-only (current)
-        %li.nav-item
-          %a.nav-link{:href => "#"} Link
-        %li.nav-item
-          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
       - unless user_signed_in?
         = form_for(resource, as: resource_name, url: session_path(resource_name), :remote => true, html: { class: "form-inline my-2 my-lg-0" }) do |f|
           = f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: "form-control mr-sm-2"
@@ -20,7 +14,9 @@
           = f.submit "Login/Register", class: "btn btn-outline-success my-2 my-sm-0"
       - else
         .my-2.my-lg-0
-          %span.navbar-text Welcome #{current_user.email}
+          %span.navbar-text
+            Welcome
+            %b #{current_user.email}
           %a.btn.btn-sm.btn-outline-success{:href => new_movies_share_url}
             Share a movie
           = button_to("Logout", destroy_user_session_url, method: :delete, class: "btn btn-sm btn-light")

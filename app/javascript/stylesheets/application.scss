@@ -1,4 +1,8 @@
-@import '~bootstrap/dist/css/bootstrap';
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
 @import 'toastr/build/toastr.min.css';
+@import '~bootstrap/dist/css/bootstrap';
 @import 'variables';
 @import 'base';

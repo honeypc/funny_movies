@@ -1,3 +1,38 @@
 .wrapper {
   padding-top: 3rem;
 }
+.button_to {
+  display: inline-block;
+}
+.card-list {
+  .card {
+    border: 0;
+    border-radius: 0;
+    padding: 10px 0;
+    &:not(first-child){
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    .card-body {
+      padding: 0px;
+      .text-muted {
+        font-size: 90%;
+      }
+      .card-statistic {
+        .far {
+          font-size: 1.35rem;
+          margin-right: 5px;
+          color: #666;
+          &:focus,
+          &:hover {
+            cursor: pointer;
+            color: #000;
+          }
+        }
+        .statistic-count {
+          font-size: 1rem; 
+        }
+      }
+    }
+  }
+}
+
