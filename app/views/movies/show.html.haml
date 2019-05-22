@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @movie.name
+%p
+  %b Description:
+  = @movie.description
+%p
+  %b Url:
+  = @movie.url
+%p
+  %b Thumbnails:
+  = @movie.thumbnails
+%p
+  %b Play list:
+  = @movie.play_list_id
+%p
+  %b Owner:
+  = @movie.owner_id
+
+= link_to 'Edit', edit_movie_path(@movie)
+\|
+= link_to 'Back', movies_path

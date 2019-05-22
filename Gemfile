@@ -49,6 +49,8 @@ gem 'draper'
 gem "pundit"
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 4.x'
+# HTTP/REST API client library
+gem 'faraday', '~> 0.9.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
