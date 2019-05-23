@@ -10,7 +10,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render "layouts/partials/header"
+    - if headerable?
+      = render "layouts/partials/header"
     .wrapper
       = yield
+    - if footerable?
+      = render "layouts/partials/footer"
     

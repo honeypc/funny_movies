@@ -1,24 +1,19 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @movie.name
-%p
-  %b Description:
-  = @movie.description
-%p
-  %b Url:
-  = @movie.url
-%p
-  %b Thumbnails:
-  = @movie.thumbnails
-%p
-  %b Play list:
-  = @movie.play_list_id
-%p
-  %b Owner:
-  = @movie.owner_id
-
-= link_to 'Edit', edit_movie_path(@movie)
-\|
-= link_to 'Back', movies_path
+.container
+  .card.p-3.mb-5{:id => "@movie_#{@movie.id}"}
+    .row.no-gutters
+      .col-md-4.col-sm-12.col-xs-12.thumbnail
+        = @movie.decorate.thumbnail("high")
+      .col-md-8.col-sm-12.col-xs-12
+        .card-body
+          %h5.card-title
+            = @movie.name
+          %p.card-text
+            %small.text-muted
+              Share by #{@movie.decorate.user_email}
+          %p.card-text.card-statistic
+            %span.statistic-count= @movie.decorate.likes
+            %i.far.fa-thumbs-up
+            %span.statistic-count= @movie.decorate.dislikes
+            %i.far.fa-thumbs-down
+          %p.card-text
+            = @movie.description

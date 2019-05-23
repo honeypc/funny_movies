@@ -1,0 +1,22 @@
+.container
+  .card-list
+    - @movies.each do |movie|
+      .card{:id => "movie_#{movie.id}"}
+        .row.no-gutters
+          .col-md-4.col-sm-12.col-xs-12
+            = movie.decorate.thumbnail
+          .col-md-8.col-sm-12.col-xs-12
+            .card-body
+              %h5.card-title
+                %a{ :href => movie_url(movie) } #{movie.name}
+              %p.card-text
+                %small.text-muted
+                  Share by #{movie.decorate.user_email}
+              %p.card-text.card-statistic
+                %span.statistic-count= movie.decorate.likes
+                %i.far.fa-thumbs-up
+                %span.statistic-count= movie.decorate.dislikes
+                %i.far.fa-thumbs-down
+              %p.card-text
+                = movie.description.truncate(250)
+  = will_paginate @movies, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-end)
