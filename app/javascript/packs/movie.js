@@ -31,4 +31,12 @@ $(function(){
     let id = getParameterByName('v', e.target.value);
     youtube(id);
   })
+  $('#movieModal').on('shown.bs.modal', function(e) {
+    var movie = $(e.relatedTarget).data();
+    $('#movieTitle').text(movie.title);
+    $(this).find('iframe').attr('src', 'https://www.youtube.com/embed/' + getParameterByName('v', movie.url));
+  })
+  $('#movieModal').on('hidden.bs.modal', function(e) {
+    $(this).find('iframe').attr('src', '');
+  })
 })

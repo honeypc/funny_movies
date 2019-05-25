@@ -4,7 +4,8 @@
       .card{:id => "movie_#{movie.id}"}
         .row.no-gutters
           .col-md-4.col-sm-12.col-xs-12
-            = movie.decorate.thumbnail
+            .movie-thumbnail{ data: { url: movie.url, toggle: "modal", target: "#movieModal", title: movie.name } }
+              = movie.decorate.thumbnail
           .col-md-8.col-sm-12.col-xs-12
             .card-body
               %h5.card-title
@@ -20,3 +21,4 @@
               %p.card-text
                 = movie.description.truncate(250)
   = will_paginate @movies, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-end)
+  = render "movies/modal"
