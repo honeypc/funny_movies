@@ -27,7 +27,8 @@ module Movies
     private
 
       def set_sources_movie
-        return unless  movie_params[:url]
+        return unless movie_params[:url].present?
+
         source = youtube(movie_params[:url]).first
         if source
           snippet = source["snippet"]
