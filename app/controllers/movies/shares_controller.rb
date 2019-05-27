@@ -33,7 +33,7 @@ module Movies
         if source
           snippet = source["snippet"]
           @movie.name = snippet["title"]
-          @movie.description = snippet["description"]
+          @movie.description = snippet["description"].inspect
           @movie.sources = snippet.merge(source["statistics"])
         end
       end
