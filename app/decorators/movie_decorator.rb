@@ -10,6 +10,10 @@ class MovieDecorator < ApplicationDecorator
   #     end
   #   end
 
+  def summary
+    Rumoji.decode(description)
+  end
+
   def data
     return unless sources
     sources.deep_symbolize_keys

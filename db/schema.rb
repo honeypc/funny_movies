@@ -10,35 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_22_073118) do
+ActiveRecord::Schema.define(version: 2019_05_27_033503) do
 
-  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "name", collation: "utf8_general_ci"
     t.text "description"
-    t.string "url"
+    t.string "url", collation: "utf8_general_ci"
     t.text "sources"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "email", default: "", null: false, collation: "utf8_general_ci"
+    t.string "encrypted_password", default: "", null: false, collation: "utf8_general_ci"
+    t.string "reset_password_token", collation: "utf8_general_ci"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
+    t.string "current_sign_in_ip", collation: "utf8_general_ci"
+    t.string "last_sign_in_ip", collation: "utf8_general_ci"
+    t.string "confirmation_token", collation: "utf8_general_ci"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
+    t.string "unconfirmed_email", collation: "utf8_general_ci"
     t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
+    t.string "unlock_token", collation: "utf8_general_ci"
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
