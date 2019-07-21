@@ -1,0 +1,5 @@
+= form_tag(movies_comments_path(@movie, format: :js), data: { remote: true }, method: :post) do
+  .form-group
+    = text_area_tag "comment[content]", nil, class: "form-control"
+    = hidden_field_tag "comment[movie_id]", @movie.id
+  = button_tag "Send", class: "btn btn-primary", type: :submit

@@ -1,0 +1,8 @@
+.media.mb-3
+  %i.fas.fa-user-circle.mr-3{ style: "font-size: 40px" }
+  .media-body
+    %h5.mt-0.mb-0
+      = comment.user.email
+    = comment.content
+  %small.pull-right
+    = comment.created_at.strftime('%d/%m/%Y at %I:%M %p')

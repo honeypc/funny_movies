@@ -17,3 +17,9 @@
             %i.far.fa-thumbs-down
           %p.card-text
             = @movie.decorate.summary
+  %h3 Comments
+  %hr
+  #comments-list.media-list
+    - @movie.comments.ordered.each do |comment|
+      = render "movies/comments/record", comment: comment
+  = render "movies/comments/form" if user_signed_in?

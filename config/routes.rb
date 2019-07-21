@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :comments
   namespace :movies do
     resources :shares, constraints: { id: /[0-9]+/ }
+    resources :comments, constraints: { id: /[0-9]+/ }
   end
   resources :home
   resources :movies, constraints: { id: /[0-9]+/ }

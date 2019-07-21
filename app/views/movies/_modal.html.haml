@@ -1,0 +1,10 @@
+/ Modal
+#movieModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "movieTitle", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#movieTitle.modal-title
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        %iframe#moviePlay{:allow => "autoplay; encrypted-media", :allowfullscreen => "", :frameborder => "0", :height => "300", :src => "", :width => "100%"}

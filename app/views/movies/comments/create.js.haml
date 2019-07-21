@@ -1,0 +1,8 @@
+- if @comment.errors.any?
+  :plain
+    toastr.errors("#{@comment.errors.full_messages.join('\n')}");
+- else
+  :plain
+    $('#comments-list').prepend("#{ escape_javascript(render 'record', comment: @comment) }")
+    $('[name="comment[content]"]').val("");
+    toastr.success("Comment was successfully added.");
